@@ -1,6 +1,5 @@
 import "./Login.scss"
 
-
 type LoginProps<T> = {
     fields: LoginFieldProps<T>[]
     className?: string
@@ -18,7 +17,9 @@ type LoginFieldProps<T> = {
 export function Login(): JSX.Element {
     return (
         <div>
-            Hello
+           <div>
+                Hello
+            </div> 
         </div>
     )
 }
