@@ -14,20 +14,20 @@ type LoginFieldProps<T> = {
     required?: boolean,
 }
 
-// able to create login for x number of rows
-export function FormBox<T extends string | number | readonly string[] | undefined>({fields}: LoginProps<T>): JSX.Element {
+export function FormBox<T extends string | number | readonly string[] | undefined>({fields, className}: LoginProps<T>): JSX.Element {
     return (
-        <>
+        <div className = {`formbox ${className}`}>
         {fields?.map((field, index) => (
-            <div key = {index}>
-            {field.header ?? <header>{field.header}</header>}
-            <input 
-                type={field.type}
-                value={field.currState}
-                onChange={field.setCurrState}
-            />
-            </div>
+            <section key = {index}>
+                {field.header ?? <header>{field.header}</header>}
+                <input 
+                    type={field.type}
+                    value={field.currState}
+                    onChange={field.setCurrState}
+                    className = "formbox__box"
+                />
+            </section>
         ))}
-        </>
+        </div>
     )
 }

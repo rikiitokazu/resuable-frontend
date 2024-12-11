@@ -32,16 +32,24 @@ export default meta;
 // };
 
 export const FormBoxExample2 = () => {
-  const [start, setStart] = useState<string>("")
+  const [firstName, setFirstName] = useState<string>("")
+  const [secondName, setSecondName] = useState<string>("")
   return (
     <FormBox 
       fields={[
         {
           header: "First name", 
           type: "text",
-          currState: start, 
+          currState: firstName, 
           required: true, 
-          setCurrState: (e) => setStart(e.target.value),
+          setCurrState: (e) => setFirstName(e.target.value),
+        }, 
+        {
+          header: "Last name",
+          type: "text", 
+          currState: secondName, 
+          required: true, 
+          setCurrState: (e) => setSecondName(e.target.value)
         }
       ]}
     />
