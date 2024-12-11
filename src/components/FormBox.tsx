@@ -18,7 +18,7 @@ export function FormBox<T extends string | number | readonly string[] | undefine
     return (
         <div className = {`formbox ${className}`}>
         {fields?.map((field, index) => (
-            <section key = {index}>
+            <section key = {index} className = "formbox__item">
                 {field.header ?? <header>{field.header}</header>}
                 <input 
                     type={field.type}
