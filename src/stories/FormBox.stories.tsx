@@ -31,9 +31,11 @@ export default meta;
 //   },
 // };
 
-export const FormBoxExample2 = () => {
-  const [firstName, setFirstName] = useState<string>("")
-  const [secondName, setSecondName] = useState<string>("")
+export const FormBoxExample = () => {
+  const [firstName, setFirstName] = useState<string>("");
+  const [secondName, setSecondName] = useState<string>("");
+  const [email, setEmail] = useState<string>(""); 
+
   return (
     <FormBox 
       fields={[
@@ -50,6 +52,13 @@ export const FormBoxExample2 = () => {
           currState: secondName, 
           required: true, 
           setCurrState: (e) => setSecondName(e.target.value)
+        }, 
+        {
+          header: "Email", 
+          type: "email", 
+          currState: email, 
+          required: true, 
+          setCurrState: (e) => setEmail(e.target.value)
         }
       ]}
     />
